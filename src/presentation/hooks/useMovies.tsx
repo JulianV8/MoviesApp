@@ -13,10 +13,10 @@ export const useMovies = () => {
   }, []);
 
   const initialLoad = async () => {
-    const nowPlayingMovies = await UseCases.moviesNowPlayingUseCase(
-      movieDBFetcher,
-    );
-    // console.log(nowPlayingMovies[0]);
+    const nowPlayingMovies = UseCases.moviesNowPlayingUseCase(movieDBFetcher);
+    const upcoming = UseCases.movieUpcomingUseCase(movieDBFetcher);
+    const topRated = UseCases.movieTopRatedUseCase(movieDBFetcher);
+    const popular = UseCases.moviePopularUseCase(movieDBFetcher);
   };
 
   return {
